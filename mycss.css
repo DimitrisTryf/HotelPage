@@ -1,0 +1,155 @@
+body {
+    background-color: rgba(231, 231, 231, 0.493);
+}
+
+.searchsymbol {
+    background-color: white !important;
+}
+
+.fas.fa-search {
+    color: lightgray;
+}
+
+input:focus, input:active:focus, input.active:focus, input.focus, input:active.focus, input.active.focus, select:focus, select:active:focus, select.active:focus, select.focus, select:active.focus, select.active.focus {
+    box-shadow: none !important;
+}
+
+.searchbtn {
+    font-weight: bold;
+}
+
+.searchbtn:hover, .searchbtn:focus {
+    background: #85a7d1;
+}
+
+button {
+    border: 0;
+}
+
+.far.fa-calendar-alt {
+    position: absolute;
+    top: 35%;
+}
+
+.arrows {
+    position: absolute;
+    top: 25%;
+}
+
+#currentCheckIn {
+    font-weight: bold;
+}
+
+.line {
+    background-color: tomato;
+    width: 3px;
+    height: auto;
+}
+
+.slidecontainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background: #3f9fc1;
+    outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(225, 226, 233);
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+select {
+    font-size: 12px !important;
+}
+
+.selects {
+    font-size: 12px !important;
+}
+
+.btbordered {
+    border-width: 5px !important;
+}
+
+.borderselect {
+    border-style: dashed !important;
+    text-align-last: center;
+}
+
+#RoomType {
+    font-size: 16px !important;
+}
+
+.mapimgbordered {
+    border-width: 2px !important;
+    border-color: white !important;
+}
+
+#sorter {
+    border-radius: 2px;
+    border-width: 1px !important;
+    border-color: rgb(175, 175, 175) !important;
+}
+
+.fas.fa-exclamation-circle {
+    color: rgb(136, 135, 135);
+}
+
+#mark {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border-radius: 15%;
+    padding: 1%;
+}
+
+.hotelcont {
+    background-color: white;
+    border: 2px solid rgb(209, 206, 206);
+}
+
+.hotelinfo {
+    font-size: 140%;
+}
+
+.sidebordered {
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+
+.sideborderedleft {
+    border-left: 1px solid lightgray;
+}
+
+.viewdeal {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    width: 90%;
+    height: 25%;
+    background-color: green;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+#PropertyType{
+    font-family: 'FontAwesome', 'sans-serif';
+}

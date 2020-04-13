@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c0bd765b83.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="mycss.css">
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+</head>
+
+<body>
+    <div class="bg-dark pb-1">
+        <!-- First Row -->
+        <div class="row pt-4 pl-4 pr-4 border-dark border-2">
+            <div class="input-group text-center">
+                <span class="input-group-text bg-white rounded-0 border-right-0">
+                    <i class="fas fa-search"></i>
+                </span>
+                <input list="cities" id="searchinp" class="col-10 form-control border-left-0 border-right-0">
+                <datalist id="cities">
+                    <!-- TODO add cities -->
+                </datalist>
+                <span class="input-group-append col-2 p-0">
+                    <button id="searchbtn" class="btn-block bg-info border-0 text-white searchbtn">Search</button>
+                </span>
+            </div>
+        </div>
+        <!-- Second Row -->
+        <div class="row pt-2 ml-1 mr-1">
+            <button id="checkinbtn" class="col-4 bg-light p-0 btbordered border border-dark">
+                <div class="row m-0">
+                    <div class="col-1 bg-info "></div>
+                    <div class="col-1"><i class="far fa-calendar-alt"></i></div>
+                    <div class="col-6 text-left">
+                        <div>Check-in</div>
+                        <div class="font-weight-bold" id="currentcheckin">No Date Selected</div>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-2 p-0">
+                        <p class="arrows"><span><i class="fas fa-chevron-left"></i></span>
+                            <span><i class="fas fa-chevron-right"></i></span></p>
+
+                    </div>
+                </div>
+            </button>
+            <button id="checkoutbtn" class="col-4 bg-light p-0 btbordered border border-dark">
+                <div class="row m-0">
+                    <div class="col-1  bg-warning">
+                    </div>
+                    <div class="col-1"><i class="far fa-calendar-alt"></i></div>
+                    <div class="col-6 text-left">
+                        <div>Check-out</div>
+                        <div class="font-weight-bold" id="currentcheckout">No Date Selected</div>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-2 p-0">
+                        <p class="arrows"><span><i class="fas fa-chevron-left"></i></span>
+                            <span><i class="fas fa-chevron-right"></i></span></p>
+
+                    </div>
+                </div>
+            </button>
+            <div class="col-4 bg-light p-0 btbordered border border-dark p-1 ">
+                <select id="RoomType" style="font-family: 'FontAwesome', Arial;" class="form-control p-0 borderselect">
+                </select>
+            </div>
+
+
+        </div>
+        <!-- Third Row -->
+        <div class="row pt-2 selects ml-1 mr-1">
+            <div class="col-4">
+                <div class="slidecontainer">
+                    <p class="text-light m-0">Value: <span id="slideval" style="position: absolute; right: 5%;"></span>
+                    </p>
+                    <input type="range" min="1" max="6000" value="6000" class="slider" id="myRange">
+
+                </div>
+            </div>
+            <div class="col-2 border border-light border-top-0 border-bottom-0">
+                <label for="PropertyType" class="m-0 text-light">Property Type </label>
+                <select id="PropertyType" class="form-control p-0 border-0 bg-dark text-light">
+                    <option selected value="0">All</option>
+                    <option value="1">&#xf005</option>
+                    <option value="2">&#xf005 &#xf005</option>
+                    <option value="3">&#xf005 &#xf005 &#xf005</option>
+                    <option value="4">&#xf005 &#xf005 &#xf005 &#xf005</option>
+                    <option value="5">&#xf005 &#xf005 &#xf005 &#xf005 &#xf005</option>
+                </select>
+            </div>
+            <div class="col-2 border border-light border-top-0 border-bottom-0 border-left-0">
+                <label for="GuestRating" class="m-0 text-light">Guest Rating</label>
+                <select id="GuestRating" class="form-control p-0 border-0 bg-dark text-light">
+                    <option selected>All</option>
+                    <option value="1">0-2 Okay</option>
+                    <option value="2">2-6 Fair</option>
+                    <option value="3">6-7 Good</option>
+                    <option value="4">7-8.5 Very Good</option>
+                    <option value="5">8.5-10 Excelent</option>
+                </select>
+            </div>
+            <div class="col-2 border border-light border-top-0 border-bottom-0 border-left-0">
+                <label for="HotelLocation" class="m-0 text-light">Hotel Location</label>
+                <select id="HotelLocation" class="form-control p-0 border-0 bg-dark text-light">
+                    <option selected>All</option>
+                </select>
+            </div>
+            <div class="col-2 border border-0">
+                <label for="MoreFilters" class="m-0 text-light">More Filters</label>
+                <select id="MoreFilters" class="form-control p-0 border-0 bg-dark text-light">
+                    <option selected>All</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4rth row -->
+    <div class="row p-2">
+        <div class="col-1">
+            <img class="border mapimgbordered" src="/images/mapicon.png" alt="view the map" data-toggle="modal"
+                data-target="#myModal">
+        </div>
+
+        <div class="col-3 offset-8 pt-3">
+            <label for="sorter" class="m-0">Sort By</label>
+
+            <select id="sorter" class=" form-control-sm p-0" style="width: 65%;">
+                <option value="All" selected>Our recomendations</option>
+            </select>
+            <i class="fas fa-exclamation-circle"></i>
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Location Map</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <iframe id="mapiframe" width="100%" height="400" frameborder="0" allowtransparency="true"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- hotels display -->
+    <div id="roomdisplayarea"></div>
+
+
+
+
+
+    <script type="text/javascript" src="myjs.js"></script>
+</body>
+
+</html>
